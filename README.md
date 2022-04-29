@@ -66,5 +66,5 @@ git branch -M main
 ```
 ## push all changes
 ```
-git push -u origin master
+git push -u origin main
 ```
