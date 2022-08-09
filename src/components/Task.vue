@@ -45,7 +45,6 @@ export default {
   props: {
     task: Object
   },
-  emits: ['change-text'],
   methods: {
     ...mapActions(['launchFetchTasks']),
     changeText() {

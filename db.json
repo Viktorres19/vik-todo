@@ -31,10 +31,10 @@
       "reminder": false
     },
     {
-      "id": 73583,
-      "reminder": false,
-      "text": "asdffgfg",
-      "day": "asdfsdfghg"
+      "id": 69151,
+      "text": "Listen to the mentor",
+      "day": "March 10th at 1:30pm",
+      "reminder": true
     }
   ]
 }
