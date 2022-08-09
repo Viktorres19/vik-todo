@@ -2,11 +2,11 @@
   <div class="task-counter">
     <div class="task-completion">
       <div class="task-completion__completed">
-        <h4 class="h4">completed:</h4>
+        <h4 class="h4">{{ completed }}:</h4>
         <div class="task-completion__count"><div>{{ completedTasks }}</div></div>
       </div>
       <div class="task-completion__incompleted">
-        <h4 class="h4">incompleted:</h4>
+        <h4 class="h4">{{ incompleted }}:</h4>
         <div class="task-completion__count"><div>{{ incompletedTasks }}</div></div>
       </div>
     </div>
@@ -20,6 +20,12 @@
 
 export default {
   name: 'TaskCounter',
+  data () {
+    return {
+      completed: 'completed',
+      incompleted: 'incompleted',
+    }
+  },
   computed: {
     completedTasks () {
       return this.$store.getters.countTasks(true)

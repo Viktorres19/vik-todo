@@ -5,24 +5,24 @@
   >
     <form @submit.enter="onSubmit" class="add-form">
       <div class="form-control">
-        <label>Task</label>
-        <input type="text" v-model="text" name="text" placeholder="Add Task" />
+        <label>{{ taskLabel }}</label>
+        <input type="text" v-model="text" name="text" :placeholder="taskInputPlaceholder" />
       </div>
       <div class="form-control">
-        <label>Day & Time</label>
+        <label>{{ dateLabel }}</label>
         <input
           type="text"
           v-model="day"
           name="day"
-          placeholder="Add Day & Time"
+          :placeholder="dateInputPlaceholder"
         />
       </div>
       <div class="form-control form-control-check">
-        <label>Set completed</label>
+        <label>{{ completedLabel }}</label>
         <input type="checkbox" v-model="reminder" name="reminder" />
       </div>
 
-      <input type="submit" value="Save Task" class="btn btn-block" />
+      <input type="submit" :value="submitLabel" class="btn btn-block" />
     </form>
   </div>
 </template>
@@ -34,7 +34,13 @@ export default {
     return {
       text: '',
       day: '',
-      reminder: false
+      reminder: false,
+      taskLabel: 'Task',
+      taskInputPlaceholder: 'Add Task',
+      dateLabel: 'Day & Time',
+      dateInputPlaceholder: 'Add Day & Time',
+      completedLabel: 'Set completed',
+      submitLabel: 'Save Task'
     }
   },
   computed: {

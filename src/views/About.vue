@@ -1,13 +1,19 @@
 <template>
   <div class="about">
-    <h3>Version 1.0.0</h3>
-    <router-link to="/" class="router-link">Go BAck</router-link>
+    <h3>{{ version }}</h3>
+    <router-link to="/" class="router-link" v-text="linkText" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  data() {
+    return {
+      version: 'Version 1.0.0',
+      linkText: 'Go BAck'
+    }
+  }
 }
 </script>
 

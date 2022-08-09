@@ -1,10 +1,7 @@
 <template>
   <header>
     <h1 class="h1">{{ title }}</h1>
-    <Button
-      v-show="homePage"
-      text="Add Task"
-    />
+    <Button v-show="homePage" />
   </header>
 </template>
 
