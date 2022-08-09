@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="$emit('toggle-add-task')"
+    @click ="launchToggleAddTask"
     :style="{background: showAddTask ? buttonState.close.color : buttonState.open.color, color: showAddTask ? '' : buttonState.open.font }"
     class="btn"
   >
@@ -9,8 +9,10 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: "Button",
+  name: 'Button',
   data() {
     return {
       buttonState: {
@@ -28,9 +30,16 @@ export default {
     }
   },
   props: {
-    showAddTask: Boolean,
     text: String,
     color: String
+  },
+  computed: {
+    showAddTask() {
+      return this.$store.state.showAddTask
+    }
+  },
+  methods: {
+    ...mapActions(['launchToggleAddTask'])
   }
 }
 </script>

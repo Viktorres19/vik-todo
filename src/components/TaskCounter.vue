@@ -17,29 +17,15 @@
 </template>
 
 <script>
+
 export default {
-  name: "TaskCounter",
-  props: {
-    tasks: Array
-  },
+  name: 'TaskCounter',
   computed: {
     completedTasks () {
-      let sum = 0
-      this.tasks.map(item => {
-        if (item.reminder === true) {
-          sum += 1
-        }
-      })
-      return sum
+      return this.$store.getters.countTasks(true)
     },
     incompletedTasks () {
-      let sum = 0
-      this.tasks.map(item => {
-        if (item.reminder === false) {
-          sum += 1
-        }
-      })
-      return sum
+      return this.$store.getters.countTasks(false)
     }
   }
 }
