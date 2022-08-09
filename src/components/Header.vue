@@ -3,17 +3,15 @@
     <h1 class="h1">{{ title }}</h1>
     <Button
       v-show="homePage"
-      :showAddTask="showAddTask"
-      @toggle-add-task="$emit('toggle-add-task')"
       text="Add Task"
     />
   </header>
 </template>
 
 <script>
-import Button from "./Button";
+import Button from '@/components/Button'
 export default {
-  name: "Header",
+  name: 'Header',
   components: {Button},
   computed: {
     homePage() {
@@ -25,7 +23,6 @@ export default {
     }
   },
   props: {
-    showAddTask: Boolean,
     title: {
       type: String,
       default: 'What I\'m gonna do?'

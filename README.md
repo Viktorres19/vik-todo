@@ -1,4 +1,5 @@
-# vue-crash-traversy
+# Vik todo list
+# Inspired by Vue-crash-traversy-2021
 
 ## Project setup
 ```
@@ -67,4 +68,8 @@ git branch -M main
 ## push all changes
 ```
 git push -u origin main
+```
+## Vuex setup
+```
+yarn add vuex@next --save
 ```

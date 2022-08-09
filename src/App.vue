@@ -2,11 +2,8 @@
   <div class="wrapper">
     <div class="container">
       <div class="app">
-        <Header
-          :showAddTask="showAddTask"
-          @toggle-add-task="toggleAddTask"
-        />
-        <router-view :showAddTask="showAddTask"></router-view>
+        <Header/>
+        <router-view></router-view>
         <Footer />
       </div>
     </div>
@@ -19,17 +16,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 export default {
   name: 'App',
-  components: {Footer, Header},
-  data() {
-    return {
-      showAddTask: false
-    }
-  },
-  methods: {
-    toggleAddTask() {
-      this.showAddTask = !this.showAddTask
-    }
-  }
+  components: {Footer, Header}
 }
 </script>
 

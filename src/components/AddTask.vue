@@ -3,7 +3,7 @@
     class="form-holder"
     :style="{maxHeight: showAddTask ? '600px' : '0' }"
   >
-    <form @submit="onSubmit" class="add-form">
+    <form @submit.enter="onSubmit" class="add-form">
       <div class="form-control">
         <label>Task</label>
         <input type="text" v-model="text" name="text" placeholder="Add Task" />
@@ -18,7 +18,7 @@
         />
       </div>
       <div class="form-control form-control-check">
-        <label>Set Reminder</label>
+        <label>Set completed</label>
         <input type="checkbox" v-model="reminder" name="reminder" />
       </div>
 
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: "AddTask",
+  name: 'AddTask',
   data() {
     return {
       text: '',
@@ -37,8 +37,10 @@ export default {
       reminder: false
     }
   },
-  props: {
-    showAddTask: Boolean
+  computed: {
+    showAddTask() {
+      return this.$store.state.showAddTask
+    }
   },
   methods: {
     onSubmit(e) {
@@ -56,7 +58,9 @@ export default {
         reminder: this.reminder
       }
 
-      this.$emit('add-task', newTask)
+      this.$store.dispatch('launchAddTask', newTask)
+
+      this.$store.state.showAddTask = false
 
       this.text = ''
       this.day = ''
