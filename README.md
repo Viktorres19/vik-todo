@@ -14,8 +14,9 @@ http://localhost:8080/
 http://10.100.32.121:8080/
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development with database
 ```
+yarn backend
 yarn serve
 ```
 
