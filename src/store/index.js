@@ -7,14 +7,14 @@ export default createStore({
   },
   mutations: {
     async fetchTasks(state) {
-      const res = await fetch('https://63245eb35c1b435727a6d5ef.mockapi.io/tasks')
+      const res = await fetch('https://mock-api-json-pl4i.onrender.com/tasks')
       state.tasks = await res.json()
     },
     toggleAddTask(state) {
       state.showAddTask = !state.showAddTask
     },
     async addTask(state, newTask) {
-      const res = await fetch('https://63245eb35c1b435727a6d5ef.mockapi.io/tasks', {
+      const res = await fetch('https://mock-api-json-pl4i.onrender.com/tasks', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -28,18 +28,18 @@ export default createStore({
     },
     async deleteTask(state, id) {
       if (confirm('Are you sure?')) {
-        const res = await fetch(`https://63245eb35c1b435727a6d5ef.mockapi.io/tasks/${id}`, {
+        const res = await fetch(`https://mock-api-json-pl4i.onrender.com/tasks/${id}`, {
           method: 'DELETE'
         })
         res.status === 200 ? (state.tasks = state.tasks.filter((task) => task.id !== id)) : alert('Error deleting task')
       }
     },
     async toggleReminder(state, id) {
-      const res2 = await fetch(`https://63245eb35c1b435727a6d5ef.mockapi.io/tasks/${id}`)
+      const res2 = await fetch(`https://mock-api-json-pl4i.onrender.com/tasks/${id}`)
       const taskToToggle = await res2.json()
       const updTask = {...taskToToggle, reminder: !taskToToggle.reminder}
 
-      const res = await fetch(`https://63245eb35c1b435727a6d5ef.mockapi.io/tasks/${id}`, {
+      const res = await fetch(`https://mock-api-json-pl4i.onrender.com/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json'
@@ -54,11 +54,11 @@ export default createStore({
       )
     },
     async changeText(state, newObj) {
-      const res2 = await fetch(`https://63245eb35c1b435727a6d5ef.mockapi.io/tasks/${newObj.id}`)
+      const res2 = await fetch(`https://mock-api-json-pl4i.onrender.com/tasks/${newObj.id}`)
       const textToChange = await res2.json()
       const updTask = {...textToChange, text: newObj.text, day: newObj.date}
 
-      const res = await fetch(`https://63245eb35c1b435727a6d5ef.mockapi.io/tasks/${newObj.id}`, {
+      const res = await fetch(`https://mock-api-json-pl4i.onrender.com/tasks/${newObj.id}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json'
