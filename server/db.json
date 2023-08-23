@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "id": "2",
+            "text": "Meeting wit",
+            "day": "March 6th at 1:30pm",
+            "reminder": true
+        },
+        {
+            "id": "3",
+            "text": "Food shopping",
+            "day": "March 7th at 2:00pm",
+            "reminder": true
+        },
+        {
+            "id": 76695,
+            "text": "Eat, sleep, rave, repeat!",
+            "day": "February 16th at 5:00pm",
+            "reminder": false
+        },
+        {
+            "id": 20205,
+            "text": "Listen to the music",
+            "day": "August 9th at 2:00pm",
+            "reminder": true
+        },
+        {
+            "id": 69151,
+            "text": "Listen to the mentor",
+            "day": "March 10th at 1:30pm",
+            "reminder": true
+        },
+        {
+            "id": 56445,
+            "text": "Add Firestore Firebase",
+            "day": "October 5th at 11:52pm",
+            "reminder": false
+        }
+    ]
+}
